@@ -1,27 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;600;800&display=swap');
-        
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
 body {
-    background-color: #0B0D17;
+    background-color: #030405;
+    color: #9CA3AF;
+    /* Subtle grid background to match EVE Frontier's technical aesthetic */
     background-image: 
-        radial-gradient(circle at 15% 50%, rgba(77, 238, 234, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 85% 30%, rgba(242, 169, 0, 0.05) 0%, transparent 50%);
-    color: #E2E8F0;
+        linear-gradient(rgba(31, 41, 55, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(31, 41, 55, 0.3) 1px, transparent 1px);
+    background-size: 30px 30px;
 }
 
 .glass-panel {
-    background: rgba(26, 29, 45, 0.7);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(12, 16, 20, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid #1F2937;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
 .glow-text {
-    text-shadow: 0 0 20px rgba(77, 238, 234, 0.5);
+    text-shadow: 0 0 10px rgba(243, 244, 246, 0.3);
+    color: #F3F4F6;
+}
+
+.scanline-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.1) 51%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.3;
+}
+
+.step-tab {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .step-tab.active {
-    background-color: #4DEEEA;
-    color: #0B0D17;
-    border-color: #4DEEEA;
+    background-color: #1F2937;
+    color: #F3F4F6;
+    border-bottom: 2px solid #C5A880;
 }
 
 .step-content {
@@ -40,15 +63,51 @@ body {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
 }
 ::-webkit-scrollbar-track {
-    background: #0B0D17;
+    background: #030405;
 }
 ::-webkit-scrollbar-thumb {
-    background: #1A1D2D;
-    border-radius: 4px;
+    background: #1F2937;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #4DEEEA;
+    background: #4B5563;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    background-color: transparent;
+    border: 1px solid #C5A880;
+    color: #C5A880;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #C5A880;
+    color: #030405;
+    box-shadow: 0 0 15px rgba(197, 168, 128, 0.4);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid #4B5563;
+    color: #D1D5DB;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    border-color: #9CA3AF;
+    color: #F3F4F6;
 }
