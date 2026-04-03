@@ -38,6 +38,12 @@
     </script>
 </head>
 <body class="antialiased min-h-screen flex flex-col">
+    <!-- Parallax Galaxy & Stars Background -->
+    <div id="nebula-bg"></div>
+    <div id="stars-bg-1" class="star-layer"></div>
+    <div id="stars-bg-2" class="star-layer"></div>
+    <div id="stars-bg-3" class="star-layer"></div>
+    <div class="tech-grid"></div>
     <div class="scanline-overlay"></div>
 
     <!-- Navigation -->
@@ -408,6 +414,26 @@ Once you understand the documentation, please explain to me in simple terms: How
                 element.classList.add('opacity-0');
             }, 2000);
         }
+
+        // Parallax Effect for Galaxy/Starfield
+        document.addEventListener('DOMContentLoaded', () => {
+            const stars1 = document.getElementById('stars-bg-1');
+            const stars2 = document.getElementById('stars-bg-2');
+            const stars3 = document.getElementById('stars-bg-3');
+            const nebula = document.getElementById('nebula-bg');
+
+            window.addEventListener('scroll', () => {
+                const scrolled = window.scrollY;
+                
+                // Move repeating star backgrounds at different speeds
+                stars1.style.backgroundPositionY = `${scrolled * 0.1}px`;
+                stars2.style.backgroundPositionY = `${scrolled * 0.25}px`;
+                stars3.style.backgroundPositionY = `${scrolled * 0.4}px`;
+                
+                // Slowly drift the nebula gradient
+                nebula.style.transform = `translateY(${scrolled * 0.05}px)`;
+            });
+        });
     </script>
 </body>
 </html>
